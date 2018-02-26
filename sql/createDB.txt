@@ -1,4 +1,4 @@
--- create linux DATABASE rt
+﻿-- create linux DATABASE rt
 
 --CREATE DATABASE rt
 --WITH OWNER = postgres

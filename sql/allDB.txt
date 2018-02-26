@@ -1,4 +1,4 @@
-
+п»ї
 -- create linux DATABASE rt
 
 --CREATE DATABASE rt
@@ -19,7 +19,7 @@ CREATE DATABASE rt
        LC_CTYPE = 'Russian_Russia.1251'
        CONNECTION LIMIT = -1;
 
--- Перед созданием таблиц необходимо создать базу данных rt
+-- РџРµСЂРµРґ СЃРѕР·РґР°РЅРёРµРј С‚Р°Р±Р»РёС† РЅРµРѕР±С…РѕРґРёРјРѕ СЃРѕР·РґР°С‚СЊ Р±Р°Р·Сѓ РґР°РЅРЅС‹С… rt
 
 -- Table: car
 
@@ -101,41 +101,41 @@ ALTER TABLE fiocar
   OWNER TO postgres;
 
 -- insert in car
-INSERT INTO car (id, model, nomer, marka) VALUES ('1','логан','а100аа196','рено');
-INSERT INTO car (id, model, nomer, marka) VALUES ('2','лачетти','а200аа196','шевролет');
-INSERT INTO car (id, model, nomer, marka) VALUES ('3','бенз','а300аа196','мерседес');
-INSERT INTO car (id, model, nomer, marka) VALUES ('4','рио','а400аа196','киа');
-INSERT INTO car (id, model, nomer, marka) VALUES ('5','цивик','а500аа196','хонда');
-INSERT INTO car (id, model, nomer, marka) VALUES ('6','2109','а600аа196','ваз');
-INSERT INTO car (id, model, nomer, marka) VALUES ('7','2107','а700аа196','ваз');
-INSERT INTO car (id, model, nomer, marka) VALUES ('8','волга','а800аа196','газ');
-INSERT INTO car (id, model, nomer, marka) VALUES ('9','дастер','а900аа196','рено');
-INSERT INTO car (id, model, nomer, marka) VALUES ('10','патриот','а999аа196','уаз');
-INSERT INTO car (id, model, nomer, marka) VALUES ('11','хантер','к001кк123','уаз');
+INSERT INTO car (id, model, nomer, marka) VALUES ('1','Р»РѕРіР°РЅ','Р°100Р°Р°196','СЂРµРЅРѕ');
+INSERT INTO car (id, model, nomer, marka) VALUES ('2','Р»Р°С‡РµС‚С‚Рё','Р°200Р°Р°196','С€РµРІСЂРѕР»РµС‚');
+INSERT INTO car (id, model, nomer, marka) VALUES ('3','Р±РµРЅР·','Р°300Р°Р°196','РјРµСЂСЃРµРґРµСЃ');
+INSERT INTO car (id, model, nomer, marka) VALUES ('4','СЂРёРѕ','Р°400Р°Р°196','РєРёР°');
+INSERT INTO car (id, model, nomer, marka) VALUES ('5','С†РёРІРёРє','Р°500Р°Р°196','С…РѕРЅРґР°');
+INSERT INTO car (id, model, nomer, marka) VALUES ('6','2109','Р°600Р°Р°196','РІР°Р·');
+INSERT INTO car (id, model, nomer, marka) VALUES ('7','2107','Р°700Р°Р°196','РІР°Р·');
+INSERT INTO car (id, model, nomer, marka) VALUES ('8','РІРѕР»РіР°','Р°800Р°Р°196','РіР°Р·');
+INSERT INTO car (id, model, nomer, marka) VALUES ('9','РґР°СЃС‚РµСЂ','Р°900Р°Р°196','СЂРµРЅРѕ');
+INSERT INTO car (id, model, nomer, marka) VALUES ('10','РїР°С‚СЂРёРѕС‚','Р°999Р°Р°196','СѓР°Р·');
+INSERT INTO car (id, model, nomer, marka) VALUES ('11','С…Р°РЅС‚РµСЂ','Рє001РєРє123','СѓР°Р·');
 
 -- insert in city
-INSERT INTO city (id, name) VALUES ('1','екатеринбург');
-INSERT INTO city (id, name) VALUES ('2','москва');
-INSERT INTO city (id, name) VALUES ('3','санкт-петербург');
-INSERT INTO city (id, name) VALUES ('4','воронеж');
-INSERT INTO city (id, name) VALUES ('5','сочи');
-INSERT INTO city (id, name) VALUES ('6','пермь');
-INSERT INTO city (id, name) VALUES ('7','краснодар');
-INSERT INTO city (id, name) VALUES ('8','смоленск');
-INSERT INTO city (id, name) VALUES ('9','новосибирск');
-INSERT INTO city (id, name) VALUES ('10','владимир');
+INSERT INTO city (id, name) VALUES ('1','РµРєР°С‚РµСЂРёРЅР±СѓСЂРі');
+INSERT INTO city (id, name) VALUES ('2','РјРѕСЃРєРІР°');
+INSERT INTO city (id, name) VALUES ('3','СЃР°РЅРєС‚-РїРµС‚РµСЂР±СѓСЂРі');
+INSERT INTO city (id, name) VALUES ('4','РІРѕСЂРѕРЅРµР¶');
+INSERT INTO city (id, name) VALUES ('5','СЃРѕС‡Рё');
+INSERT INTO city (id, name) VALUES ('6','РїРµСЂРјСЊ');
+INSERT INTO city (id, name) VALUES ('7','РєСЂР°СЃРЅРѕРґР°СЂ');
+INSERT INTO city (id, name) VALUES ('8','СЃРјРѕР»РµРЅСЃРє');
+INSERT INTO city (id, name) VALUES ('9','РЅРѕРІРѕСЃРёР±РёСЂСЃРє');
+INSERT INTO city (id, name) VALUES ('10','РІР»Р°РґРёРјРёСЂ');
 
 -- insert in fio
-INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('1','коновалов','вадим','анфисович','1');
-INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('2','иванов','иван','иванович','1');
-INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('3','коновалов','петр','петрович','2');
-INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('4','соломин','никита','станиславович','3');
-INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('5','снежин','артем','алексеевич','4');
-INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('6','тверитина','анна','владимировна','5');
-INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('7','суханов','валерий','андреевич','6');
-INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('8','неустроев','александр','сергеевич','7');
-INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('9','луканин','виктор','викторович','8');
-INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('10','попков','дмитрий','юрьевич','10');
+INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('1','РєРѕРЅРѕРІР°Р»РѕРІ','РІР°РґРёРј','Р°РЅС„РёСЃРѕРІРёС‡','1');
+INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('2','РёРІР°РЅРѕРІ','РёРІР°РЅ','РёРІР°РЅРѕРІРёС‡','1');
+INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('3','РєРѕРЅРѕРІР°Р»РѕРІ','РїРµС‚СЂ','РїРµС‚СЂРѕРІРёС‡','2');
+INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('4','СЃРѕР»РѕРјРёРЅ','РЅРёРєРёС‚Р°','СЃС‚Р°РЅРёСЃР»Р°РІРѕРІРёС‡','3');
+INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('5','СЃРЅРµР¶РёРЅ','Р°СЂС‚РµРј','Р°Р»РµРєСЃРµРµРІРёС‡','4');
+INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('6','С‚РІРµСЂРёС‚РёРЅР°','Р°РЅРЅР°','РІР»Р°РґРёРјРёСЂРѕРІРЅР°','5');
+INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('7','СЃСѓС…Р°РЅРѕРІ','РІР°Р»РµСЂРёР№','Р°РЅРґСЂРµРµРІРёС‡','6');
+INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('8','РЅРµСѓСЃС‚СЂРѕРµРІ','Р°Р»РµРєСЃР°РЅРґСЂ','СЃРµСЂРіРµРµРІРёС‡','7');
+INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('9','Р»СѓРєР°РЅРёРЅ','РІРёРєС‚РѕСЂ','РІРёРєС‚РѕСЂРѕРІРёС‡','8');
+INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('10','РїРѕРїРєРѕРІ','РґРјРёС‚СЂРёР№','СЋСЂСЊРµРІРёС‡','10');
 
 -- insert in fiocar
 INSERT INTO fiocar (id, idfio, idcar) VALUES ('1','1','1');
