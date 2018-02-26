@@ -1,0 +1,130 @@
+-- Перед созданием таблиц необходимо создать базу данных rt
+
+-- Table: car
+
+-- DROP TABLE car;
+
+CREATE TABLE car
+(
+  id integer NOT NULL,
+  model character(50),
+  nomer character(9),
+  marka character varying(50),
+  CONSTRAINT car_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE car
+  OWNER TO postgres;
+
+-- Table: city
+
+-- DROP TABLE city;
+
+CREATE TABLE city
+(
+  id integer NOT NULL,
+  name character(150),
+  CONSTRAINT city_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE city
+  OWNER TO postgres;
+
+-- Table: fio
+
+-- DROP TABLE fio;
+
+CREATE TABLE fio
+(
+  id integer NOT NULL,
+  family character(100),
+  name character(100),
+  lastname character(100),
+  idcity integer NOT NULL,
+  CONSTRAINT fio_pkey PRIMARY KEY (id),
+  CONSTRAINT fio_city_fkey FOREIGN KEY (idcity)
+      REFERENCES city (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE fio
+  OWNER TO postgres;
+
+-- Table: fiocar
+
+-- DROP TABLE fiocar;
+
+CREATE TABLE fiocar
+(
+  id integer NOT NULL,
+  idfio integer NOT NULL,
+  idcar integer NOT NULL,
+  CONSTRAINT fiocar_pkey PRIMARY KEY (id),
+  CONSTRAINT fiocar_idcar_fkey FOREIGN KEY (idcar)
+      REFERENCES car (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT fiocar_idfio_fkey FOREIGN KEY (idfio)
+      REFERENCES fio (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE fiocar
+  OWNER TO postgres;
+
+-- insert in car
+INSERT INTO car (id, model, nomer, marka) VALUES ('1','логан','а100аа196','рено');
+INSERT INTO car (id, model, nomer, marka) VALUES ('2','лачетти','а200аа196','шевролет');
+INSERT INTO car (id, model, nomer, marka) VALUES ('3','бенз','а300аа196','мерседес');
+INSERT INTO car (id, model, nomer, marka) VALUES ('4','рио','а400аа196','киа');
+INSERT INTO car (id, model, nomer, marka) VALUES ('5','цивик','а500аа196','хонда');
+INSERT INTO car (id, model, nomer, marka) VALUES ('6','2109','а600аа196','ваз');
+INSERT INTO car (id, model, nomer, marka) VALUES ('7','2107','а700аа196','ваз');
+INSERT INTO car (id, model, nomer, marka) VALUES ('8','волга','а800аа196','газ');
+INSERT INTO car (id, model, nomer, marka) VALUES ('9','дастер','а900аа196','рено');
+INSERT INTO car (id, model, nomer, marka) VALUES ('10','патриот','а999аа196','уаз');
+INSERT INTO car (id, model, nomer, marka) VALUES ('11','хантер','к001кк123','уаз');
+
+-- insert in city
+INSERT INTO city (id, name) VALUES ('1','екатеринбург');
+INSERT INTO city (id, name) VALUES ('2','москва');
+INSERT INTO city (id, name) VALUES ('3','санкт-петербург');
+INSERT INTO city (id, name) VALUES ('4','воронеж');
+INSERT INTO city (id, name) VALUES ('5','сочи');
+INSERT INTO city (id, name) VALUES ('6','пермь');
+INSERT INTO city (id, name) VALUES ('7','краснодар');
+INSERT INTO city (id, name) VALUES ('8','смоленск');
+INSERT INTO city (id, name) VALUES ('9','новосибирск');
+INSERT INTO city (id, name) VALUES ('10','владимир');
+
+-- insert in fio
+INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('1','коновалов','вадим','анфисович','1');
+INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('2','иванов','иван','иванович','1');
+INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('3','коновалов','петр','петрович','2');
+INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('4','соломин','никита','станиславович','3');
+INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('5','снежин','артем','алексеевич','4');
+INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('6','тверитина','анна','владимировна','5');
+INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('7','суханов','валерий','андреевич','6');
+INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('8','неустроев','александр','сергеевич','7');
+INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('9','луканин','виктор','викторович','8');
+INSERT INTO fio (id, family, name, lastname, idcity) VALUES ('10','попков','дмитрий','юрьевич','10');
+
+-- insert in fiocar
+INSERT INTO fiocar (id, idfio, idcar) VALUES ('1','1','1');
+INSERT INTO fiocar (id, idfio, idcar) VALUES ('2','1','2');
+INSERT INTO fiocar (id, idfio, idcar) VALUES ('3','2','3');
+INSERT INTO fiocar (id, idfio, idcar) VALUES ('4','3','4');
+INSERT INTO fiocar (id, idfio, idcar) VALUES ('5','4','5');
+INSERT INTO fiocar (id, idfio, idcar) VALUES ('6','5','6');
+INSERT INTO fiocar (id, idfio, idcar) VALUES ('7','6','7');
+INSERT INTO fiocar (id, idfio, idcar) VALUES ('8','7','8');
+INSERT INTO fiocar (id, idfio, idcar) VALUES ('9','8','9');
+INSERT INTO fiocar (id, idfio, idcar) VALUES ('10','9','10');
+INSERT INTO fiocar (id, idfio, idcar) VALUES ('11','10','11');

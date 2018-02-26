@@ -1,0 +1,19 @@
+-- create linux DATABASE rt
+
+--CREATE DATABASE rt
+--WITH OWNER = postgres
+--ENCODING = 'UTF8'
+--TABLESPACE = pg_default
+--LC_COLLATE = 'ru_RU.utf-8'
+--LC_CTYPE = 'ru_RU.utf-8'
+--CONNECTION LIMIT = -1;
+
+-- create windows DATABASE rt
+
+CREATE DATABASE rt
+WITH OWNER = postgres
+ENCODING = 'UTF8'
+TABLESPACE = pg_default
+LC_COLLATE = 'Russian_Russia.1251'
+LC_CTYPE = 'Russian_Russia.1251'
+CONNECTION LIMIT = -1;
